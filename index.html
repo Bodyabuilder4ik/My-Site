@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курси по спорту</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #282c34;
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+            header img {
+                width: 50px;
+                height: 50px;
+            }
+
+            header nav {
+                display: flex;
+                gap: 20px;
+            }
+
+                header nav a {
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    transition: color 0.3s ease;
+                }
+
+                    header nav a:hover {
+                        color: #61dafb;
+                    }
+
+            header .login-button {
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                background-color: #61dafb;
+                color: black;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                header .login-button:hover {
+                    background-color: #21a1f1;
+                }
+
+            header .menu-icon {
+                display: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 30px;
+            background-color: #282c34;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+            .mobile-menu a {
+                display: block;
+                padding: 10px 20px;
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+
+                .mobile-menu a:hover {
+                    background-color: #61dafb;
+                }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            section:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+        article img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        article h2 {
+            font-size: 22px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        article p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #d9534f;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        article button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            article button:hover {
+                background-color: #4cae4c;
+            }
+
+        .label {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #ff6347;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 960px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+
+            header .menu-icon {
+                display: block;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Логотип сайту">
+        <nav>
+            <a href="#home">Головна</a>
+            <a href="#products">Продукти</a>
+            <a href="#about">Про нас</a>
+            <a href="#contact">Контакти</a>
+        </nav>
+        <a href="#login" class="login-button">Вхід</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home">Головна</a>
+            <a href="#products">Продукти</a>
+            <a href="#about">Про нас</a>
+            <a href="#contact">Контакти</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <article>
+                    <img src="product1.png" alt="Фото продукту 1">
+                    <h2>Курс для початківців</h2>
+                    <p>Ідеальний старт для тих, хто тільки починає.</p>
+                    <div class="price">Ціна: 599 грн</div>
+                    <button>Придбати</button>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <img src="product2.png" alt="Фото продукту 2">
+                    <h2>Курс для любителів</h2>
+                    <p>Для любителів цього спорту, які хочуть розвиватись.</p>
+                    <div class="price">Ціна: 999 грн</div>
+                    <button>Придбати</button>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <img src="product3.png" alt="Фото продукту 3">
+                    <h2>Професійний курс</h2>
+                    <p>Для тих, хто прагне досягти найвищих результатів.</p>
+                    <div class="price">Ціна: 1499 грн</div>
+                    <button>Придбати</button>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <div class="label">Новинка</div>
+                    <img src="product4.png" alt="Фото продукту 4">
+                    <h2>Курс для майстрів</h2>
+                    <p>Розроблений для професійних спортсменів.</p>
+                    <div class="price">Ціна: 1999 грн</div>
+                    <button>Придбати</button>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
